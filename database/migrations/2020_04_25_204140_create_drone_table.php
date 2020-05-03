@@ -24,7 +24,7 @@ class CreateDroneTable extends Migration
             $table->decimal('longitude', 8, 2);
             $table->integer('bateria');
             $table->string('stats');
-            $table->timestamps();
+           
                 //referenciando chave estrangeira
             $table->foreign('id_restaurantes')->references('id_restaurantes')->on('restaurantes');
             $table->foreign('id_cliente')->references('id_cliente')->on('cliente');

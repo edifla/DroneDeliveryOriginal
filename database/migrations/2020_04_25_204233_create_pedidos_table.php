@@ -27,7 +27,7 @@ class CreatePedidosTable extends Migration
             $table->dateTime('hora_termino', 0);
             $table->string('tipo_entrega');
             $table->string('forma_pagamento');
-            $table->timestamps();
+          
             //referenciando chave estrangeira
             $table->foreign('id_cliente')->references('id_cliente')->on('cliente');
             $table->foreign('id_encomenda')->references('id_encomenda')->on('encomenda');

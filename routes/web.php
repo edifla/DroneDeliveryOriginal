@@ -35,8 +35,15 @@ Route::get('/duvidas', function () {
 Route::get('/registro', function (){
 	return view ('registro');
 });
+Route::get('/loja', function (){
+	return view ('loja');
+});
 Route::get('/teste',function(){
 	//rota pra eliminar todos os dados da tabela cliente quando al´guém entrar nela
 	DB::table('cliente')->delete();
 	return "Ok";
 });
+
+//TESTE CONTROLER LOGIN
+
+ 

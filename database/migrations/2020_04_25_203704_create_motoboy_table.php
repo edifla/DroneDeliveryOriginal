@@ -22,7 +22,7 @@ class CreateMotoboyTable extends Migration
             $table->string('nome_M');
             $table->integer('cpfM');
             $table->string('placa');
-            $table->timestamps();
+            
             //referenciando chave estrangeira
             $table->foreign('id_restaurantes')->references('id_restaurantes')->on('restaurantes');
         });

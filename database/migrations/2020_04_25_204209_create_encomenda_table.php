@@ -23,7 +23,7 @@ class CreateEncomendaTable extends Migration
             $table->decimal('preco', 8, 2);
             $table->longText('descricao');
             $table->dateTime('tempo_de_entrega', 0);
-            $table->timestamps();
+          
             //referenciando chave estrangeira
             $table->foreign('id_restaurantes')->references('id_restaurantes')->on('restaurantes');
         });
