@@ -24,6 +24,7 @@ class CreateRestaurantesTable extends Migration
             $table->string('phoneRest');
             $table->longText('descricao');
             $table->string('endereco_restaurante');
+            $table->string('categoria_restaurante');
         });
     }
 
