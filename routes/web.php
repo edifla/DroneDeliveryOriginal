@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\cliente;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,6 @@ Route::get('/teste',function(){
 	return "Ok";
 });
 
-//TESTE CONTROLER LOGIN
-
+//TESTE CONTROLER registro
+Route::resource('cliente','ClienteController');
  

@@ -29,7 +29,7 @@
           <a class="p-2 " href="#">Sobre Nós</a>
           <a class="p-2 " href="#">Duvidas</a>
           <a class="p-2 " href="login">Login</a>
-          <a class="button btn1" href="registro">Registrar-se </a>
+          <a class="button btn1" href="cliente/create">Registrar-se </a>
 			</div>
 				</div>
 		
@@ -42,10 +42,8 @@
      
    {{-- NOSSO FOOTER QUE EU TO TENTANDO DEIXAR ELE FULL  --}}
    <footer class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>
-      <a href="#">Back to top</a>
-    </p>
+    <p>Site criado por Rafael e Nathan </p>
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

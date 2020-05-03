@@ -1,5 +1,6 @@
-<?php
 
+<?php
+/*
 use Illuminate\Database\Seeder;
 
 class ClienteTableSeeder extends Seeder
@@ -7,7 +8,7 @@ class ClienteTableSeeder extends Seeder
    
     public function run()
     {
-        //inserindo dados na tabela ciente através de um array
+        inserindo dados na tabela ciente através de um array
     	$dados=
     	[
     		'nome_cliente'=>'Rafael',
@@ -28,3 +29,4 @@ class ClienteTableSeeder extends Seeder
         }
     }
 }
+*/

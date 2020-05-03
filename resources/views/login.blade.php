@@ -39,11 +39,9 @@
 			{{--Div do registra-se se nao tiver uma conta--}}
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					{{--Linha pra linkar pro registro--}}Não tem uma conta?<a href="registro">Registre-se</a>
+					{{--Linha pra linkar pro registro--}}Não tem uma conta?<a href="cliente/create">Registre-se</a>
 				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Esqueceu sua senha?</a>{{--Essa parte aqui a gente nao fez ainda--}}
-				</div>
+				
 			</div>
 		</div>
 	</div>
