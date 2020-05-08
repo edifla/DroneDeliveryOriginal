@@ -28,8 +28,8 @@
           <a class="p-2 " href="#">Restaurantes</a>
           <a class="p-2 " href="#">Sobre Nós</a>
           <a class="p-2 " href="#">Duvidas</a>
-          <a class="p-2 " href="login">Login</a>
-          <a class="button btn1" href="cliente/create">Registrar-se </a>
+          <a class="p-2 " href="/validacao">Login</a>
+          <a class="button btn1" href="">Registrar-se </a>
 			</div>
 				</div>
 		

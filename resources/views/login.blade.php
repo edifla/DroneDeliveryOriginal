@@ -14,22 +14,30 @@
 					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
 			</div>
-			{{--Fechamento da div do conteiner--}}
-			{{--Inicio da Div dos input de Email e senha--}}
+			
+			
+
+			{{--Validações de erro --}}
+			@include('inc.erros')
+
 			<div class="card-body">
-				<form action="login" >
-					<div>
-						<input type="text" class="form-control" placeholder="Email">
-						
-					</div>
-					<div>
-						<input type="password" class="form-control" placeholder="Senha">
-					</div>
-					{{--Lembrar-se--}}
-					<div class="row align-items-center remember">
-						<input type="checkbox">Lembrar-se
-					{{--Fim do Lembrar-se--}}
-					</div>
+				
+				<form method="POST" action="/validacao" >
+					{{csrf_field()}}
+			 {{--Box do Email--}}
+			        <div class="mb-3">
+			         <label for="id_email" >Email <span ></span></label>
+			         <input type="email" class="form-control"id="id_email" name="text_email"  >
+			        </div>
+
+					<div class="mb-3">
+          			<label for="id_senha" >Senha<span></label>
+          			<div class="input-group">
+            		<div class="input-group-prepend">
+            		</div>   
+            		<input type="password" class="form-control"id="id_senha" name="text_senha"  >
+
+
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
