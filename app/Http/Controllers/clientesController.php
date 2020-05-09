@@ -8,7 +8,14 @@ use App\clientes;
 
 class clientesController extends Controller
 {
-   
+   //Função pra retornar o formulário de recuperação de senha
+
+   public function FormRecuperarSenha()
+    {
+        return view('/recuperar_email');
+    } 
+    
+    //Função pra apresentar a pagina de Login como pagina inicial do site
     public function index()
     {
        return view ('/login');
@@ -43,10 +50,6 @@ class clientesController extends Controller
             }
        }
 
-       
-        
-    
-        
     }
     public function store(Request $request)
     {
@@ -64,7 +67,7 @@ class clientesController extends Controller
         return redirect('/');
     }
 
-    
+
     public function show($id)
     {
         

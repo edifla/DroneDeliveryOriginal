@@ -18,10 +18,12 @@ route::get('/recsenha',function(){
 	return view('recuperar_email');
 });
 
-
+//Para entrar no Login
 Route::get("/","clientesController@Index");
+//Pra entrar no registro
 route::resource('/registro','clientesController');
+//Validação do Login
 Route::post('/validacao','clientesController@FazerLogin');
-
+Route::get('/recuperar','clientesController@FormRecuperarSenha');
 
 

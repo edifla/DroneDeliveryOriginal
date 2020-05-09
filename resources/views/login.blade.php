@@ -52,7 +52,7 @@
 				
 				<div class="mb-3" >
 					
-						 Esqueceu sua senha?<a href="recuperar_email"> Recuperar Senha </a>
+						 Esqueceu sua senha?<a href="/recuperar"> Recuperar Senha </a>
 
 				</div>
 			</div>
