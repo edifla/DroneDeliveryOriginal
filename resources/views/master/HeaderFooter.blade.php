@@ -19,7 +19,7 @@
 			<div class="container">
 				<!--logo-->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="/"><img id="logo" src="imagens/logo.png" width="70px"> </a>
+					<a class="navbar-brand" href="/homepage"><img id="logo" src="imagens/logo.png" width="70px"> </a>
 			
 					
 				</div>
@@ -28,8 +28,8 @@
           <a class="p-2 " href="#">Restaurantes</a>
           <a class="p-2 " href="#">Sobre Nós</a>
           <a class="p-2 " href="#">Duvidas</a>
-          <a class="p-2 " href="/validacao">Login</a>
-          <a class="button btn1" href="">Registrar-se </a>
+          <a class="p-2 " href="/">Login</a>
+          <a class="button btn1" href="registro/create">Registrar-se </a>
 			</div>
 				</div>
 		

@@ -14,14 +14,14 @@
       
       {{--Inicio do formulário de registro--}}
       
-      <form method="POST" action="/cliente">
+      <form method="POST" action="/registro">
 
           {{csrf_field()}}
         {{--Box do primeiro nome--}}
         <div class="row">{{--Formatação dos espaços onde as text box ficam--}}
           <div class="mb-3">{{--Edita o tamanho das text box--}}
             
-            <label for="id_nome" >Primeiro nome<span >(Obrigatório)</label>
+            <label for="id_nome" >Primeiro nome </label>
             <input type="text" class="form-control" id="id_nome" name="text_nome" placeholder="Ex: Rafael"  required>
             <div class="invalid-feedback">
               Confirme o nome informado.
@@ -31,7 +31,7 @@
                 {{--Box do segundo nome--}}
                 <div class="mb-3">
                 
-                <label for="id_sobrenome" >Sobrenome<span>(Obrigatório)</label>
+                <label for="id_sobrenome" >Sobrenome </label>
                 <input type="text" class="form-control" id="id_sobrenome" name="text_sobrenome" placeholder="Ex: Costa" required>
                 <div class="invalid-feedback">
                   Confirme o sobrenome informado.
@@ -39,9 +39,9 @@
               </div>
             </div>
         
-          {{--Box da senha--}}
+                {{--Box da senha--}}
         <div class="mb-3">
-          <label for="id_senha" >Senha<span>(Obrigatório)</label>
+          <label for="id_senha" >Senha </label>
           
           <div class="input-group">
             <div class="input-group-prepend">
@@ -55,9 +55,27 @@
           </div>
         </div>
 
-         {{--Box do numero para contato--}}
+                {{--Repetir senha--}}
+
         <div class="mb-3">
-          <label for="id_contato" >Contato<span >(Obrigatório)</label>
+          <label for="id_senha_repetida" >Repita a senha </label>
+          
+          <div class="input-group">
+            <div class="input-group-prepend">
+            </div>
+            
+            <input type="password" class="form-control"id="id_senha_repetida" name="text_senha_repetida" placeholder="Repita sua senha" required>
+            
+              
+           
+            </div>
+          </div>
+        </div>
+
+
+                {{--Box do numero para contato--}}
+        <div class="mb-3">
+          <label for="id_contato" >Contato </label>
           <div class="input-group">
             <div class="input-group-prepend">
             </div>
@@ -69,58 +87,40 @@
           </div>
         </div>
 
-          {{--Box do Email--}}
+                {{--Box do Email--}}
         <div class="mb-3">
-          <label for="id_email" >Email <span >(Opcional)</span></label>
+          <label for="id_email" >Email </label>
           <input type="email" class="form-control"id="id_email" name="text_email" placeholder="seuemail@exemplo.com" required>
           <div class="invalid-feedback">
             Por favor,insira um email valido para receber as atualizações.
           </div>
         </div>
           
-          {{--Box da data de nascimento--}}
+                {{--Box da data de nascimento--}}
         <div class="mb-3">
-          <label for="id_data" >Data de nascimento<span >(Obrigatório)</span></label>
+          <label for="id_data" >Data de nascimento</label>
           <input type="date" class="form-control"id="id_data" name="text_data"  required>
           <div class="invalid-feedback">
           </div>
         </div>
 
-          {{--Box do endereço--}}
+                {{--Box do endereço--}}
         <div class="mb-3">
-          <label for="id_endereco" >Endereço<span >(Obrigatório)</span></label>
+          <label for="id_endereco" >Endereço </label>
           <input type="text" class="form-control"id="id_endereco" name="text_endereco" placeholder="1234 Main St" required>
           <div class="invalid-feedback">
            Por favor,insira seu endereço.
           </div>
         </div>
 
-        {{--Div dos paises,isso aqui eu vou ter que analisar direitinho depois por que essa parte
-          de endereço ta muito complicada de fazer na logica
-        <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="nome_pais">País</label>
-            <select class="custom-select d-block w-100" id="nome_pais" required>
-              <option value="">Escolha...</option>
-              <option>Brasil</option>
-            </select>
-            <div class="invalid-feedback">
-              Por favor,escolha um país valido.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="nome_estado">Estado</label>
-            <select class="custom-select d-block w-100" id="nome_estado" required>
-              <option value="">Escolha...</option>
-              <option>Pernambuco</option>
-            </select>
-            <div class="invalid-feedback">
-              Por favor,escolha um estado valido.
-            </div>
-          </div>
-          --}}
-        {{--Fim da box de endereço--}}
+                {{--Check Box--}}
 
+         <div class="form-group">
+          <input type="checkbox" class="form-control"id="check_termos" name="text_check_termos" value="1" >
+          <label for='check_termos'> Concordo com os termos e condições. </label>
+          
+          </div>
+        </div>
        
         <button class="btn btn-primary btn-lg btn-block" type="submit ">Finalizar registro</button>
              

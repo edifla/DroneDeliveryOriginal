@@ -5,45 +5,86 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\clientes;
+
 class clientesController extends Controller
 {
-    public function ExibirFormularioLogin()
+   
+    public function index()
     {
+       return view ('/login');
+    }
 
-    	//retorna o form
-    	return view('/login');
+  
+    public function create()
+    {
+        //APRESENTAÇÃO DO FORMULARIO DE REGISTRO PARA PODER SER UTILIZADO PELAS OUTRAS FUNÇÕES.
+        return view('registro');
     }
 
     public function FazerLogin(Request $request)
     {
-    	//Encriptando a senha
-    	//$request->text_senha;
-    	$senha =Hash::make($request->text_senha);
-    	return $request->text_senha .  '-' . $senha;
+        //AUTENTICAÇÃO DO LOGIN.
+       $dados = clientes::where('email', $request->text_email)->first();
+       $resultado = "";
 
-    	/*Verificar os Input e depois da verificação,consultar o BD.
-    	$this->validate($request,[
-    		'text_email'=>'required',
-    		'text_senha'=>'required'
 
-    	]);
+       if(count($dados)==0){
+            $resultado = "Esta email de usuário não existe.";
+            //return redirect ('/');
+       }
+       else{//Foi encontrado um usuário com este email.
 
-    	return "FOCO VOCE CONSEGUE";
-    	*/
+            
+            if(Hash::check($request->text_senha, $dados->senha)){//Verifica se a senha bate com o email no BD
+                return redirect ('/homepage');//Se bateu,entra
+            }else{//se nao bateu
+                $resultado = "Senha invalida";
+                //return redirect ('/');
+            }
+       }
+
+       
+        
+    
+        
     }
-    public function InserirCliente()
+    public function store(Request $request)
     {
-   
-    	$novo = new clientes;
-    	$novo->nome = 'Lucas';
-    	$novo->sobrenome = 'Lucas';
-    	$novo->senha =Hash::make('coxinha123');
-    	$novo->contato = '8189212';
-    	$novo->email = 'Lucas666@gmail.com';
-    	$novo->data = '2000-07-20';
-    	$novo->endereco = 'Rua do tamandua';
-   		$novo->save();
-   		return 'Usuário salvo';
+
+        //INSERÇÃO DE CLIENTES NOVOS ATRÁVES DO FORMULARIO DE REGISTRO.
+        $novo = new clientes;
+        $novo->nome = $request->text_nome;
+        $novo->sobrenome = $request->text_sobrenome;
+        $novo->senha =Hash::make($request->text_senha);
+        $novo->contato = $request->text_contato;
+        $novo->email = $request->text_email;
+        $novo->data = $request->text_data;
+        $novo->endereco = $request->text_endereco;
+        $novo->save();
+        return redirect('/');
     }
 
+    
+    public function show($id)
+    {
+        
+    }
+
+   
+    public function edit($id)
+    {
+        
+    }
+
+    
+    public function update(Request $request, $id)
+    {
+       
+    }
+
+    
+    public function destroy($id)
+    {
+        
+    }
 }

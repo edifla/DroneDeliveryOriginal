@@ -3,24 +3,25 @@
 use Illuminate\Support\Facades\Route;
 use App\cliente;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
+    error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+}
 
 
 
+route::get('/homepage',function(){
+	return view('/homepage');
+});
+
+route::get('/recsenha',function(){
+	return view('recuperar_email');
+});
 
 
-//Teste Login número 2
-Route::get('/','clientesController@ExibirFormularioLogin');
+Route::get("/","clientesController@Index");
+route::resource('/registro','clientesController');
 Route::post('/validacao','clientesController@FazerLogin');
 
-//teste
-route::get('inserir_cliente','clientesController@InserirCliente');
+
+

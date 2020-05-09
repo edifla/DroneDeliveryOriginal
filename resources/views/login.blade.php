@@ -27,7 +27,7 @@
 			 {{--Box do Email--}}
 			        <div class="mb-3">
 			         <label for="id_email" >Email <span ></span></label>
-			         <input type="email" class="form-control"id="id_email" name="text_email"  >
+			         <input type="email" class="form-control"id="id_email" name="text_email" placeholder="Email"  >
 			        </div>
 
 					<div class="mb-3">
@@ -35,7 +35,7 @@
           			<div class="input-group">
             		<div class="input-group-prepend">
             		</div>   
-            		<input type="password" class="form-control"id="id_senha" name="text_senha"  >
+            		<input type="password" class="form-control"id="id_senha" name="text_senha" placeholder="Senha"  >
 
 
 					<div class="form-group">
@@ -47,9 +47,14 @@
 			{{--Div do registra-se se nao tiver uma conta--}}
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					{{--Linha pra linkar pro registro--}}Não tem uma conta?<a href="cliente/create">Registre-se</a>
+					{{--Linha pra linkar pro registro--}}Não tem uma conta?<a href='registro/create'>Registre-se</a>
 				</div>
 				
+				<div class="mb-3" >
+					
+						 Esqueceu sua senha?<a href="recuperar_email"> Recuperar Senha </a>
+
+				</div>
 			</div>
 		</div>
 	</div>
