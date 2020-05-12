@@ -29,7 +29,7 @@
           <a class="p-2 " href="#">Sobre Nós</a>
           <a class="p-2 " href="#">Duvidas</a>
           <a class="p-2 " href="/">Login</a>
-          <a class="button btn1" href="registro/create">Registrar-se </a>
+          <a class="button btn1" href="/frmregistro">Registrar-se </a>
 			</div>
 				</div>
 		

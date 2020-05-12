@@ -189,3 +189,11 @@ margin-left: 4px;
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+.form-control{
+  height: 50px;
+  }
+.titulo-erro{
+ font-weight: bolder; 
+ color: black;/*aqui muda a cor do OPSS*/
+}

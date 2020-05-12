@@ -16,13 +16,36 @@ route::get('/homepage',function(){
 
 
 
-//Para entrar no Login
-Route::get("/","clientesController@Index");
-//Pra entrar no registro
-route::resource('/registro','clientesController');
-//Validação do Login
-Route::post('/validacao','clientesController@FazerLogin');
-//Para apresentar o Formulário de recuperação de senha
-Route::get('/recuperar','clientesController@FormRecuperarSenha');
 
+
+
+//Default
+Route::get("/","clientesController@Index");
+
+
+//------------------------------------------------
+
+
+
+//Registro
+route::get('/frmregistro','clientesController@frmRegistro');
+route::post('/registro','clientesController@NovoRegistro');
+
+//------------------------------------------------
+
+
+//Login
+Route::get('/FrmLogin','clientesController@frmLogin');
+Route::post('/executarLogin','clientesController@FazerLogin');
+
+
+//------------------------------------------------
+
+
+
+//Recuperação de Senha
+Route::get('/recuperar','clientesController@FormRecuperarSenha');
+route::post('/executar_rec_senha','clientesController@FazerRecuperacaoSenha');
+
+//------------------------------------------------
 
