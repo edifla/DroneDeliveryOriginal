@@ -26,7 +26,7 @@
       </div>
 
       
-      <H3 style="padding-top: 5%"> PROMOÇÕES </H3> </br>  
+      <H3 style="padding-top: 5%"> Menu </H3> </br>  
 
         <div class="row" style="padding-top: 2%">
 

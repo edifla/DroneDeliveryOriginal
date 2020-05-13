@@ -9,22 +9,23 @@ class RestaurantesController extends Controller
 {
    public function executar_registro_restaurante()
    {
-   
+   //Retorna o restaurante
    	return view('/registro_restaurante');
    
    } 
-   public function NovoRegistroRestaurantes()
-   {
 
-   		$novor = new restaurantes;
-        $novor->Nome_restaurante = $request->text_nome_restaurante;
-        $novor->Dono = $request->text_dono;
-        $novor->Cnpj = $request->text_cnjp;
-        $novor->email_restaurante = $request->text_email_restaurante;
-        $novor->contato_dono = $request->text_contato_dono;
-        $novor->descricao = $request->text_descricao;
-        $novor->endereco = $request->text_endereco;
-        $novor->save();
+   public function NovoRegistroRestaurantes(Request $request)
+   {
+   		//Inseri dados nos restaurantes
+   		$novo = new restaurantes;
+        $novo->nomeres = $request->text_nome_restaurante;
+        $novo->dono = $request->text_dono;
+        $novo->cnpj = $request->text_cnjp;
+        $novo->emailres = $request->text_email_restaurante;
+        $novo->contatodono = $request->text_contato_dono;
+        $novo->descricao = $request->text_descricao;
+        $novo->endereco = $request->text_endereco;
+        $novo->save();
         return redirect('/homepage');
 
    }

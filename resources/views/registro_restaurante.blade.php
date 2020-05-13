@@ -2,9 +2,9 @@
 
     @section ('content')
 
-    <body>
+    <body >
     	
-    	<form method="POST" action="/executar_registro_restaurante">
+    	<form style="padding-top: 200px" method="POST" action="/executar_registro_restaurante">
 
           {{csrf_field()}}
         

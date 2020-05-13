@@ -16,10 +16,13 @@ class CreatePratosTable extends Migration
         Schema::create('pratos', function (Blueprint $table) {
             $table->increments('id_prato');
             
+            $table->integer('id_restaurantes')->unsigned();
 
             $table->string('Nome_prato');
             $table->longText('descricao_prato');
             $table->decimal('preco', 8, 2);
+
+             $table->foreign('id_restaurantes')->references('id_restaurantes')->on('restaurantes');
         });
     }
 

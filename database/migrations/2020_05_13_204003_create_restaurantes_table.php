@@ -15,18 +15,16 @@ class CreateRestaurantesTable extends Migration
     {
         Schema::create('restaurantes', function (Blueprint $table) {
             $table->increments('id_restaurantes');
-            
-            $table->integer('id_prato')->unsigned();
 
-            $table->string('Nome_restaurante');
-            $table->string('Dono');
-            $table->string('Cnpj');
-            $table->string('email_restaurante');
-            $table->integer('contato_dono');
+            $table->string('nomeres');
+            $table->string('dono');
+            $table->string('cnpj');
+            $table->string('emailres');
+            $table->integer('contatodono');
             $table->longText('descricao');
             $table->string('endereco');
 
-            $table->foreign('id_prato')->references('id_prato')->on('pratos');
+           
 
         });
     }
