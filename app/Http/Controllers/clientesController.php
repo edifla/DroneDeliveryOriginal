@@ -33,23 +33,27 @@ class clientesController extends Controller
 
         $dados = clientes::where('email', $request->text_email)->first();
         
-        $resultado ="";
+        $erros_bd ="";
 
         if(count($dados) == 0 )
             {
-                $resultado = 'Não existe este usuário';
+                $erros_bd = ['Não existe este email de  usuário'];
+                return view('/login',compact('erros_bd'));
             }
             else{
 
                 if(Hash::check($request->text_senha,$dados->senha)){
-                    $resultado ='Logado com sucesso';
+                    
+                    return view('/homepage');
+
                 }else{
 
-                    $resultado ='Senha incorreta';
+                    $erros_bd = ['Senha incorreta'];
+                    return view('/login',compact('erros_bd'));
                 }
             }
 
-        return ($resultado);
+        
     }
 
     //-------------------------------------------------------------------------------------------------------
@@ -83,7 +87,7 @@ class clientesController extends Controller
                             ->orWhere('contato','=',$request->text_contato)
                             ->get();
         if($dados->count() != 0){
-            $erros_bd = ['Email ou número para contado ja estão em uso!'];
+            $erros_bd = [' Email ou número para contado ja estão em uso!'];
             return view ('/registro',compact('erros_bd'));
         }
 
