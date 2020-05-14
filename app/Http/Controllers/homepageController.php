@@ -11,9 +11,9 @@ class homepageController extends Controller
     {
     	if(Session::has('login'))
     	{
-    		return redirect ('/');
+    		return view('/homepage');
     	}
-
-		return view('/homepage');
+		return redirect ('/');
+		
     }
 }

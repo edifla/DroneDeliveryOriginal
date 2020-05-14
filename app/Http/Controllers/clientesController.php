@@ -13,7 +13,7 @@ class clientesController extends Controller
     //Função pra apresentar a pagina de Login como pagina inicial do site
     public function index()
     {
-        if(Session::has('/login'))
+        if(Session::has('login'))
         {
             return $this->frmLogin();
         }else
