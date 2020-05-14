@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\clientes;
-
+use Session;    
 class clientesController extends Controller
 {
    
@@ -13,14 +13,21 @@ class clientesController extends Controller
     //Função pra apresentar a pagina de Login como pagina inicial do site
     public function index()
     {
-       return $this->frmLogin();
+        if(Session::has('/login'))
+        {
+            return $this->frmLogin();
+        }else
+        {
+            return view('/homepage_index');
+        }
     }
 
     //-------------------------------------------------------------------------------------------------------
     //Area de Login
     //-------------------------------------------------------------------------------------------------------
 
-    public function frmLogin(){//Encaminha pra o formulário de Login
+    public function frmLogin()
+    {//Encaminha pra o formulário de Login
         return view('/login');
     }
     
@@ -40,20 +47,17 @@ class clientesController extends Controller
                 $erros_bd = ['Não existe este email de  usuário'];
                 return view('/login',compact('erros_bd'));
             }
-            else{
 
-                if(Hash::check($request->text_senha,$dados->senha)){
+        if(!Hash::check($request->text_senha,$dados->senha)){
                     
-                    return view('/homepage');
+                $erros_bd = ['Senha incorreta'];
+                return view('/login',compact('erros_bd'));
 
-                }else{
-
-                    $erros_bd = ['Senha incorreta'];
-                    return view('/login',compact('erros_bd'));
-                }
             }
-
-        
+                //Criar sessão
+                Session::put('login','sim');
+                Session::put('id_cliente',$clientes->nome);
+                return redirect('/homepage_index');
     }
 
     //-------------------------------------------------------------------------------------------------------
@@ -101,7 +105,7 @@ class clientesController extends Controller
         $novo->data = $request->text_data;
         $novo->endereco = $request->text_endereco;
         $novo->save();
-        return redirect('/');
+        return redirect('/login');
     }
 
 

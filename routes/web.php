@@ -8,12 +8,6 @@ if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
     error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 }
 
-
-
-route::get('/homepage',function(){
-	return view('/homepage');
-});
-
 route::get('/restaurante',function(){
 	return view('/loja');
 });
@@ -23,8 +17,7 @@ route::get('/restaurante',function(){
 
 
 
-//Default
-Route::get("/","clientesController@Index");
+
 
 
 //------------------------------------------------
@@ -39,7 +32,7 @@ route::post('/registro','clientesController@NovoRegistro');
 
 
 //Login
-Route::get('/FrmLogin','clientesController@frmLogin');
+Route::get('/','clientesController@frmLogin');
 Route::post('/executarLogin','clientesController@FazerLogin');
 
 
@@ -62,3 +55,8 @@ route::post('/executar_rec_senha','clientesController@FazerRecuperacaoSenha');
 
 Route::get('/teste','RestaurantesController@executar_registro_restaurante');
 route::post('/executar_registro_restaurante','RestaurantesController@NovoRegistroRestaurantes');
+
+//HOMEPAGE CONTROLLER---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Entrando na homepage com sua sessão
+route::get('/homepage_index','homepageController@exibirhomepage');

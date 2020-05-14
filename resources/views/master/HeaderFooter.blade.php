@@ -19,7 +19,7 @@
 			<div class="container">
 				<!--logo-->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="/homepage"><img id="logo" src="imagens/logo.png" width="70px"> </a>
+					<a class="navbar-brand" href="/"><img id="logo" src="imagens/logo.png" width="70px"> </a>
 			
 					
 				</div>
