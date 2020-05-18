@@ -39,7 +39,6 @@ Route::post('/executarLogin','clientesController@FazerLogin');
 //------------------------------------------------
 
 
-
 //Recuperação de Senha
 Route::get('/recuperar','clientesController@FormRecuperarSenha');
 route::post('/executar_rec_senha','clientesController@FazerRecuperacaoSenha');
@@ -60,6 +59,9 @@ route::post('/executar_registro_restaurante','RestaurantesController@NovoRegistr
 
 //Entrando na homepage com sua sessão
 route::get('/homepage_index','homepageController@exibirhomepage');
+//Sair de sessão
+Route::get('/logout','clientesController@Logout');
+
 
 
 //Entrando  na lista de restaurantes

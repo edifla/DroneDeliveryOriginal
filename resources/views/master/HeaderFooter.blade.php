@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}" rel="stylesheet">
 
 </head>
-
+	
 <body>
 
   <header>
@@ -20,7 +20,8 @@
 				<!--logo-->
 				<div class="navbar-header">
 					<a class="navbar-brand" href="/"><img id="logo" src="imagens/logo.png" width="70px"> </a>
-			
+  				
+		
 					
 				</div>
 				<div id="menu">
@@ -28,8 +29,8 @@
           <a class="p-2 " href="#">Restaurantes</a>
           <a class="p-2 " href="#">Sobre Nós</a>
           <a class="p-2 " href="#">Duvidas</a>
-          <a class="p-2 " href="/">Login</a>
-          <a class="button btn1" href="/frmregistro">Registrar-se </a>
+          <strong> {{Session  ('nome') }} </strong> 
+		  <a class="p-2 " href="/logout">Sair</a>
 			</div>
 				</div>
 		

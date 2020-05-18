@@ -3,6 +3,9 @@
 @section('content')
     
 {{--Div da barra de pesquisa--}}
+
+
+
 <div class="heroIMG"> 
   <div class=" p-2 p-md-5 text-white ">
   <div class="col-md-6 px-0">

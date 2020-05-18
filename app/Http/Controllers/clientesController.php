@@ -56,10 +56,14 @@ class clientesController extends Controller
             }
                 //Criar sessão
                 Session::put('login','sim');
-                Session::put('id_cliente',$clientes->nome);
+                Session::put('nome','Bem vindo'.$dados->nome);
                 return redirect('/homepage_index');
     }
-
+    public function Logout()
+    {
+        Session::flush();
+        return redirect('/');
+    }
     //-------------------------------------------------------------------------------------------------------
     //Area de Registro
     //-------------------------------------------------------------------------------------------------------
