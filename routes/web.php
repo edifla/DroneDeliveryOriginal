@@ -60,3 +60,7 @@ route::post('/executar_registro_restaurante','RestaurantesController@NovoRegistr
 
 //Entrando na homepage com sua sessão
 route::get('/homepage_index','homepageController@exibirhomepage');
+
+
+//Entrando  na lista de restaurantes
+route::get('/lista', 'restaurantesController@mostrarRestaurantes');

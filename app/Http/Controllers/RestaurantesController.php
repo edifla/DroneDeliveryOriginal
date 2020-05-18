@@ -29,4 +29,9 @@ class RestaurantesController extends Controller
         return redirect('/homepage');
 
    }
+
+   public function mostrarRestaurantes(){
+    //  $dados = restaurantes::all();
+      return view('listaRestaurantes');
+   }
 }
