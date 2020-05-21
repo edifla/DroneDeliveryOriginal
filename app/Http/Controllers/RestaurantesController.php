@@ -31,7 +31,7 @@ class RestaurantesController extends Controller
    }
 
    public function mostrarRestaurantes(){
-    //  $dados = restaurantes::all();
-      return view('listaRestaurantes');
+      $dados = restaurantes::all();
+      return view('listaRestaurantes', compact('dados'));
    }
 }

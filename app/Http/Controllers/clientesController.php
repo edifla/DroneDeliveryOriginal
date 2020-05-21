@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\clientes;
-use Session;    
+use Session;
+use App\classes\minhaclasse;    
 class clientesController extends Controller
 {
    
@@ -56,7 +57,7 @@ class clientesController extends Controller
             }
                 //Criar sessão
                 Session::put('login','sim');
-                Session::put('nome','Bem vindo'.$dados->nome);
+                Session::put('nome','Bem vindo '. $dados->nome);
                 return redirect('/homepage_index');
     }
     public function Logout()
@@ -125,6 +126,23 @@ class clientesController extends Controller
         $this->validate($request,[
             'text_email' =>'required|email'
         ]);
-        return 'Feito meu patrão';
+
+        $dados = clientes::where('email','=',$request->text_email)->get();
+        if($dados->count() == 0)
+        {
+            $erros_bd=['O email associado não existe'];
+            return view('/recuperar_senha',compact('erros_bd'));
+        }
+        //Atualiza a senha do usuário para a nova senha
+        $dados = $dados->first();
+        //Cria uma nova senha aleatória utilizando a class criarcodigo
+        $nova_senha = minhaclasse::CriarCodigo();
+        $cliente->senha = Hash::make($nova_senha);
+        $cliente->save();
+
+
+//$2y$10$ATA6jyXN0G0FBeRj2HswQ.v9pIvY7u/79Gi2Eji.wAtkf0dsA.n4i
+
+        return $nova_senha;
     }
 }
